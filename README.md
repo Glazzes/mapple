@@ -72,6 +72,6 @@ To the usage of this project is pretty straight forward.
 - Classes that are meant to be created dynamically (the return type of your mapping method) must
   have a no args constructor.
 - `@Mapping` annotation is repeatable you can define as many as needed, it takes
-  2 string parameters `source` that refers to a class field in the argument you provided
-  and `target` that refers to a field in the instance that will be dynamically of
+  2 string parameters `source` that refers to a declared field in the object you provided
+  as argument and `target` that refers to a declared field in the object that will get created dynamically of
   the specified return type.
