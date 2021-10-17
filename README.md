@@ -34,13 +34,13 @@ class CarDto {
 To the usage of this project is pretty straight forward.
 - `@Mapper` annotation does nothing, but it shows intention at first glance
 - You must define an INSTANCE field and call `Mappers.getMapper` and provide your
-instance type as an argument, this way a Proxy will get created the one that will
-intercept methods calls to convert your object to your expected DTO.
-- Mapping methods must take only one argument and it's return type must be 
-different form `void.class` or `Void.class`
+  instance type as an argument, this way a Proxy will get created the one that will
+  intercept methods calls to convert your object to your expected DTO.
+- Mapping methods must take only one argument and it's return type must be
+  different form `void.class` or `Void.class`
 - Classes that are meant to be created dimanically (the return type of your mapping method) must
-have a no args constructor.  
+  have a no args constructor.
 - `@Mapping` annotation is repeatable you can define as many as neeeded, it takes
-2 string parameters `source` that refers to a class field in the argument you provided
-and `target` that refers to a field in the instance that will be dinamically of
-the specified return type.
+  2 string parameters `source` that refers to a class field in the argument you provided
+  and `target` that refers to a field in the instance that will be dinamically of
+  the specified return type.
