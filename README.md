@@ -14,7 +14,7 @@ import com.glaze.maple.core.Mappers;
 
 @Mapper
 interface CarMapper {
-    CarMapper mapper = Mappers.getMapper(CarMapper.class);
+    CarMapper INSTANCE = Mappers.getMapper(CarMapper.class);
 
     @Mapping(source = "model", target = "brand")
     @Mapping(source = "seatCount", target = "numOfSeats")
