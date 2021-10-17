@@ -3,6 +3,7 @@ package com.glaze.maple.core;
 import com.glaze.maple.annotations.Mapping;
 import com.glaze.maple.expcetion.ConstructorNotFoundException;
 import com.glaze.maple.expcetion.FieldNotPresentException;
+import com.glaze.maple.expcetion.InvalidMappingException;
 import com.glaze.maple.expcetion.InvalidMethodSignatureException;
 
 import java.lang.reflect.Constructor;
@@ -43,7 +44,7 @@ class MapleInvocationHandler implements InvocationHandler {
             try{
                 targetField.set(target, sourceValue);
             }catch (IllegalAccessException e){
-                e.printStackTrace();
+                throw new InvalidMappingException(e.getMessage());
             }
         }
 
