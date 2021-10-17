@@ -1,0 +1,47 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+group 'com.glaze.mapple'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.glaze.mapple'
+            artifactId = 'glaze-mapple'
+            version = '1.0'
+
+            from components.java
+        }
+
+        mavenJava(MavenPublication){
+            pom {
+                name = 'Mapple dto mapper'
+                description = "A mapper based on how mapstructs works"
+                url = 'https://github.com/Glazzes/mapple'
+
+                developers{
+                    developer{
+                        id = 'Glaze'
+                        name = 'Santiago'
+                    }
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
