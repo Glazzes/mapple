@@ -20,6 +20,8 @@ class ClassUtil {
     public static boolean isMappingMethodSignatureValid(Method method){
         return method.getReturnType() != void.class
                && method.getReturnType() != Void.class
+               && !method.getReturnType().isInterface()
+               && !method.getReturnType().isPrimitive()
                && method.getParameterCount() == 1;
     }
 }
